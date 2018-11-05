@@ -10,7 +10,7 @@ module ApplicationHelper
 		res = Net::HTTP.start(url.host, url.port) do |http|
  			http.request(req)
 		end
-		res.body
+		JSON.parse(res.body)
 	end
 
 end
